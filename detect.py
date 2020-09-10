@@ -23,7 +23,6 @@ def extract_plate(img): # the function detects and perfors blurring on the numbe
     plate = None
     
     for (x,y,w,h) in plate_rect:
-        a,b = (int(0.025*img.shape[0]), int(0.025*img.shape[1])) #parameter tuning
         plate = plate_img[y:y+h, x:x+w, :]
         # finally representing the detected contours by drawing rectangles around the edges.
         cv2.rectangle(plate_img, (x,y), (x+w, y+h), (51,51,255), 3)
@@ -34,7 +33,7 @@ def detect_plate(net , charModel, filename):
     UPLOAD_FOLDER = r'static\images'
     inpWidth = 416  # 608     # Width of network's input image
     inpHeight = 416  # 608     # Height of network's input image
-    img = os.path.join(UPLOAD_FOLDER,os.listdir(UPLOAD_FOLDER)[0])
+    img = os.path.join(UPLOAD_FOLDER,filename)
     frame = cv2.imread(img)
 
     blob = cv2.dnn.blobFromImage(frame, 1/255, (inpWidth, inpHeight), [0, 0, 0], 1, crop=False)
@@ -47,11 +46,6 @@ def detect_plate(net , charModel, filename):
 
     # Remove the bounding boxes with low confidence
     plate = postprocess(frame, outs)
-
-    # Put efficiency information. The function getPerfProfile returns the overall time for inference(t) and the timings for each of the layers(in layersTimes)
-    t, _ = net.getPerfProfile()
-    label = 'Inference time: %.2f ms' % (t * 1000.0 / cv2.getTickFrequency())
-    #cv.putText(frame, label, (0, 15), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255))
 
     
     # Write the frame with the detection boxes

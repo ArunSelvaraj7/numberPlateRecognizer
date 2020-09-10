@@ -23,12 +23,7 @@ def drawPred(frame,classId, conf, left, top, right, bottom):
     #    cv.rectangle(frame, (left, top), (right, bottom), (255, 178, 50), 3)
     cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 3)
 
-    label = '%.2f' % conf
 
-    # Get the label for the class name and its confidence
-    if classes:
-        assert(classId < len(classes))
-        label = '%s: %s' % (classes[classId], label)
     return
 
 

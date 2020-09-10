@@ -84,8 +84,6 @@ def postprocess(frame, outs):
 
 
 # Get the names of the output layers
-
-
 def getOutputsNames(net):
     # Get the names of all the layers in the network
     layersNames = net.getLayerNames()

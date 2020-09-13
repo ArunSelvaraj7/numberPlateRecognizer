@@ -1,5 +1,1 @@
-charRecognition/data/train
-charRecognition/data/val
-charRecognition/trainCharRec.py
-darknet-yolo/model.weights
-*.pyc
+darknet-yolo\model.weights

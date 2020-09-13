@@ -1,4 +1,3 @@
-*.weights
 charRecognition/data/train
 charRecognition/data/val
 /__pycache__

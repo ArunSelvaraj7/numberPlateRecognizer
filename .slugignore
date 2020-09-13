@@ -1,6 +1,5 @@
 charRecognition/data/train
 charRecognition/data/val
-/__pycache__
 charRecognition/trainCharRec.py
 utility/__pycache__
 utility/__init.py__

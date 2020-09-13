@@ -46,7 +46,7 @@
 
     <br><br><br>
     <div class="container login-msg">
-
+        <br>
         <h4> Uploaded image... </h4>
 
 
@@ -55,7 +55,7 @@
             <div class="item">
                 <img style="height: 60vh; width: auto;" src="{{url_for('static',filename='images/'+file)}}" alt="Chicago">
             </div>
-            <div>
+            <div style="width: 150%">
                 {% if output == '' %}
                 <h4>Apologies! No number plate was detected...</h4>
                 <h4>Please try with a clear and accurate image</h4>

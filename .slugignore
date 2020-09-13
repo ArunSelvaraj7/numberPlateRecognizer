@@ -1,0 +1,4 @@
+charRecognition\data\train
+charRecognition\data\val
+charRecognition\trainCharRec.py
+*.pyc

@@ -1,0 +1,4 @@
+/__pycache__
+charRecognition/data
+charRecognition/trainCharRec.py
+utility/__pycache__
